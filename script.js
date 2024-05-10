@@ -21,10 +21,10 @@ request.send()
 //here the JSON.parse convert the JSON string into array of objects
 request.onload=function(){
     var data=JSON.parse(request.response)
-    console.log("All the countries from Asia continent:");
+    console.log("All the countries with a population of less than 2 lacs:");
     var res=data.filter((item)=>{
-        if(item.region == "Asia"){
+        if(item.population < 200000){
             console.log(item.name);
         }
     });
-}
+}   
